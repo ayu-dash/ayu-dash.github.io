@@ -1,0 +1,251 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Inter", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+#app {
+    display: flex;
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    width: 300px;
+    height: 100vh;
+    padding: 24px;
+    overflow-y: auto;
+    border-right: 1px var(--color-border) solid;
+    background: white;
+    z-index: 2;
+}
+
+.side-menu .logo {
+    margin-bottom: 30px;
+}
+
+.side-menu .logo a {
+    font-family: "Playfair Display", serif;;
+    font-size: 26px;
+    color: var(--color-gray-200);
+}
+
+.side-menu .menu, .side-menu .social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 24px;
+}
+
+.side-menu .link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 9px 16px;
+    border-radius: 4px; 
+    font-size: var(--font-body);
+    font-weight: 600;
+    color: var(--color-gray-300);
+}
+
+.side-menu .link.active, .side-menu .link:hover {
+    background-color: var(--color-background-1);
+}
+
+.side-menu .link.active .icon {
+    fill: var(--color-primary);
+}
+
+.side-menu .link .icon {
+    fill: var(--color-gray-200);
+}
+
+.side-menu .dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    overflow: hidden;
+    visibility: hidden;
+    max-height: 0;
+    margin-left: 52px;
+    list-style: none;
+    border: 1px  var(--color-background-1) solid;
+    border-radius: 4px;
+    transition: .5s ease-out;
+}
+
+.dropdown-menu.active {
+    visibility: visible;
+    max-height: 1000px;
+}
+
+
+.side-menu .dropdown-menu .dropdown-item {
+    padding: 9px 16px;
+    border-bottom: 1px  var(--color-background-1) solid;
+}
+
+.side-menu .dropdown-menu .dropdown-item:hover {
+    background-color: var(--color-background-1);
+}
+
+.side-menu .dropdown-menu a {
+    font-size: var(--font-body);
+    color: var(--color-gray-300);
+}
+
+.side-menu .social-links .😊 {
+    margin-bottom: 24px;
+    font-weight: 600;
+    color: var(--color-gray-200);
+}
+
+.content {
+    /* position: absolute; */
+    margin-left: 300px;
+    flex: 1;
+}
+
+.content .header {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 0 60px;
+    height: 60px;
+    border-bottom: 1px var(--color-border) solid;
+}
+
+.content .header .icon {
+    fill: var(--color-gray-100);
+}
+
+.content .profile {
+    padding-bottom: 32px;
+    border-bottom: 1px var(--color-border) solid;
+}
+
+.content .profile .bg {
+    position: relative;
+    height: 160px;
+    background: url(/assets/img/tim-stief-YFFGkE3y4F8-unsplash.jpg);
+    background-size: cover;
+}
+
+.content .profile .pp {
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+}
+
+.content .profile .pp img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100px;
+    height: 100px;
+    transform: translate(-50%, -50%);
+    border: 6px solid white;
+    border-radius: 50%;
+}
+
+.content .profile .pp .left, .content .profile .pp .right {
+    display: block;
+    position: absolute; 
+    width: 14px;
+    height: 14px;
+    background-color: transparent;
+    border-radius: 50%;
+    
+    z-index: 1;
+}
+
+.content .profile .pp .left {
+    top: 36px;
+    left: -13.5px;
+    box-shadow: 5.5px 7px white;
+}
+
+.content .profile .pp .right {
+    top: 36px;
+    left: 99.5px;
+    box-shadow: -4.5px 7px white;
+}
+
+.content .profile .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 72px;
+}
+
+.content .profile .name {
+    font-size: var(--font-heading-1);
+    font-weight: 500;
+    color: var(--color-gray-400);
+}
+
+.content .profile .job {
+    font-size: var(--font-heading-3);
+    color: var(--color-gray-400);
+}
+
+.content .profile .tag {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: var(--font-body-2);
+    color: var(--color-gray-200);
+}
+
+.content .profile .tag .separator {
+    display: block;
+    width: 3px;
+    height: 3px;
+    background-color: var(--color-gray-100);
+}
+
+.content .profile .tag a {
+    color: var(--color-gray-200);
+}
+
+.content .about {
+    margin: 24px auto;
+    width: 720px;
+}
+
+.content .about h2 {
+    font-size: var(--font-heading-2);
+    font-weight: 600;
+    color: var(--color-gray-400);
+    margin-bottom: 16px;
+}
+
+.content .about .text p {
+    font-size: var(--font-body);
+    color: var(--color-gray-300);
+    margin-bottom: 16px;
+}
+
+#reader {
+    width: 720px;
+    margin: 24px auto;
+}
+
+#reader canvas {
+    width: 720px;
+}
